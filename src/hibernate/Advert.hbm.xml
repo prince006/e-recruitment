@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="pojo.Advert" table="adv_info">
+    <id column="adv_no" name="adv_no">
+      <generator class="increment"/>
+    </id>
+    <property column="subject" length="50" name="subject" type="string"/>
+    <property column="description" length="200" name="description" type="string"/>
+    <property column="url" name="url" type="string"/>
+    <property column="is_active" length="1" name="is_active" type="string"/>
+    <property column="created_by" length="20" name="created_by" type="string"/>
+    <property column="created_on" name="created_on" type="java.sql.Timestamp"/>
+  </class>
+</hibernate-mapping>

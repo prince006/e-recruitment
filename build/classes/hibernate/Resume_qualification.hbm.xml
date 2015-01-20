@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pojo.Resume_qualification" table="Resume_qualification">
+        <id column="resume_qualification_no" name="resume_qualification_no">
+            <generator class="increment"/>
+        </id>
+
+        <many-to-one
+			name="resume"
+			column="resume_no"
+			class="pojo.Resume"
+			not-null="true"
+			cascade="all"
+            />
+
+        <property column="qualification" length="50" name="qualification" type="string"/>
+        <property column="pass_year" name="pass_year" type="integer"/>
+        <property column="board_university" name="board_university" type="string" length="100"/>
+        <property column="percentage" name="percentage" type="double"/>
+        <property column="grade" name="grade" type="string"/>
+    </class>
+  
+
+</hibernate-mapping>

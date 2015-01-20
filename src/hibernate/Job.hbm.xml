@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="pojo.Job" table="Job_info">
+    <id column="job_no" name="job_no">
+      <generator class="increment"/>
+    </id>
+    <property column="title" length="200" name="title" type="string"/>
+    <property column="description" length="200" name="description" type="string"/>
+    <property column="min_exp" name="min_exp" type="double"/>
+    <property column="max_exp" name="max_exp" type="double"/>
+    <property column="expire_date" name="expire_date" type="date"/>
+    <property column="skill_req" name="skill_req" type="string"/>
+    <property column="location" name="location" type="string"/>
+    <property column="job_role" name="job_role" type="string"/>
+    <property column="emp_type" name="emp_type" type="string"/>
+    <property column="fun_area" name="fun_area" type="string"/>
+    <property column="job_cat" name="job_cat" type="string"/>
+    <property column="is_active" length="1" name="is_active" type="string"/>
+    <property column="created_by" length="20" name="created_by" type="string"/>
+    <property column="created_on" name="created_on" type="java.sql.Timestamp"/>
+     <set name="applicants"	table="user_job_info" cascade="all">
+          <key column="job_no"/>
+          <many-to-many column="USER_ID" class="pojo.UserPojo"/>
+      </set>
+      <set name="saveJob"	table="user_saved_job" cascade="all">
+          <key column="job_no"/>
+          <many-to-many column="USER_ID" class="pojo.UserPojo"/>
+      </set> 
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="aboutERSActionBean" class="action.AboutERSAction" scope="prototype" />
+
+	<bean id="aboutDeveloperActionBean" class="action.AboutDeveloperAction"
+		scope="prototype" />
+
+	<bean id="loginActionBean" class="action.UserAction" scope="prototype">
+		<property name="userDAO" ref="userDAOBean" />
+	</bean>
+
+	<bean id="resetpassActionBean" class="action.UserAction" scope="prototype">
+		<property name="userDAO" ref="userDAOBean" />
+	</bean>
+
+	<bean id="logoutActionBean" class="action.UserAction" scope="prototype" />
+
+	<bean id="registerNowActionBean" class="action.UserAction" scope="prototype">
+		<property name="userDAO" ref="userDAOBean" />
+	</bean>
+
+	<bean id="contactUsActionBean" class="action.ContactUsAction"
+		scope="prototype" />
+
+	<bean id="profileActionBean" class="action.ProfileAction" scope="prototype">
+		<property name="userDAO" ref="userDAOBean" />
+	</bean>
+
+	<bean id="userDAOBean" class="dao.UserDAO" />
+
+	<bean id="advertActionBean" class="action.AdvertAction" scope="prototype">
+		<property name="advertDao" ref="advertDAOBean" />
+	</bean>
+
+	<bean id="advertDAOBean" class="dao.AdvertDao" />
+
+	<bean id="questActionBean" class="action.QuestAction" scope="prototype">
+		<property name="questDao" ref="questDAOBean" />
+	</bean>
+
+	<bean id="questDAOBean" class="dao.QuestDao" />
+
+	<bean id="jobActionBean" class="action.JobAction" scope="prototype">
+		<property name="jobDao" ref="jobDAOBean" />
+	</bean>
+
+	<bean id="jobDAOBean" class="dao.JobDao" />
+
+	<bean id="examActionBean" class="action.ExamAction" scope="prototype">
+		<property name="examDao" ref="examDAOBean" />
+		<property name="questDao" ref="questDAOBean" />
+	</bean>
+
+	<bean id="midoDAOBean" class="action.MediocarQusAction" scope="prototype">
+		<property name="examDao" ref="examDAOBean" />
+	</bean>
+	
+	<bean id="examDAOBean" class="dao.ExamDao" />
+	
+	<bean id="examQusActionBean" class="action.ExamQuestionAction" scope="prototype">
+		<property name="examDao" ref="examDAOBean" />
+		<property name="questDao" ref="questDAOBean" />
+	</bean>
+	
+	<bean id="resumeActionBean" class="action.ResumeAction" scope="prototype">
+		<property name="resumeDao" ref="resumeDAOBean" />
+		<property name="userDAO" ref="userDAOBean" />
+	</bean>
+
+	<bean id="resumeDAOBean" class="dao.ResumeDao" />
+	
+	<bean id="uploadActionBean" class="action.UploadAction" />
+
+</beans>

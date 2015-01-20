@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="pojo.Question" table="Qus_info">
+    <id column="qus_no" name="qus_no">
+      <generator class="increment"/>
+    </id>
+    <property column="qus" length="600" name="qus" type="string"/>
+    <property column="ansa" length="200" name="ansa" type="string"/>
+    <property column="ansb" length="200" name="ansb" type="string"/>
+    <property column="ansc" length="200" name="ansc" type="string"/>
+    <property column="ansd" length="200" name="ansd" type="string"/>
+    <property column="correctans" length="10" name="correctans" type="string"/>
+    <property column="is_active" length="1" name="is_active" type="string"/>
+    <property column="created_by" length="20" name="created_by" type="string"/>
+    <property column="created_on" name="created_on" type="java.sql.Timestamp"/>
+  </class>
+</hibernate-mapping>

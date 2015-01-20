@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+   <class name="pojo.Resume" table="resume_info">
+    <id column="resume_no" name="resume_no">
+      <generator class="increment"/>
+    </id>
+    <property column="title" length="50" name="title" type="string"/>
+    <property column="first_name" length="30" name="first_name" type="string"/>
+    <property column="last_name" length="30" name="last_name" type="string"/>
+    <property column="c_address" length="50" name="c_address" type="string"/>
+    <property column="p_address" length="50" name="p_address" type="string"/>
+    <property column="mobile_no" length="10" name="mobile_no" type="string"/>
+    <property column="email" length="50" name="email" type="string"/>
+    <property column="gender" length="1" name="gender" type="string"/>
+    <property column="is_married" length="1" name="is_married" type="string"/>
+    <property column="remarks" length="100" name="remarks" type="string"/>
+    <property column="skills" name="skills" type="string"/>
+    <property column="rating" name="rating" type="double" precision="1"/>
+    <property column="exp" name="exp" type="double" precision="1"/>
+    <property column="is_active" length="1" name="is_active" type="string"/>
+    <property column="created_by" length="20" name="created_by" type="string"/>
+    <property column="created_on" name="created_on" type="java.sql.Timestamp"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,417 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache. org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+
+		<action name="aboutERS" class="aboutERSActionBean">
+			<result name="success">/aboutERS.jsp</result>
+		</action>
+
+		<action name="aboutDeveloper" class="aboutDeveloperActionBean">
+			<result name="success">/aboutDeveloper.jsp</result>
+		</action>
+
+		<action name="login" class="loginActionBean" method="login">
+			<result name="login">/login.jsp</result>
+			<result name="home">/home.jsp</result>
+		</action>	
+		
+
+		<action name="forgotpass" class="loginActionBean" method="login">
+		    <result name="input">/forgotPassword.jsp</result>
+			<result name="success">/forgotPassResult.jsp</result>
+		</action>    
+		
+		<action name="logout" class="logoutActionBean" method="logout">
+			<result name="logout">/logout.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="registerNow" class="registerNowActionBean"
+			method="registration">
+			<result name="input">/registerNow.jsp</result>
+			<result name="success">/registerNowResult.jsp</result>
+		</action>
+
+		<action name="reset" class="resetpassActionBean" method="resetPass">
+			<result name="input">/resetPass.jsp</result>
+			<result name="success">/resetPassResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+
+		<action name="UserAuthentication" class="resetpassActionBean" method="AuthencateUser">
+			<result name="success">/resetPassFirst.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="contactUs" class="contactUsActionBean" method="contactUs">
+			<result name="input">/contactUs.jsp</result>
+			<result name="success">/contactUsResult.jsp</result>
+		</action>
+		
+		<action name="contactUsList" class="contactUsActionBean" method="getAllContacts">
+			<result name="input">/ContactUsList.jsp</result>
+			<result name="list">/ContactUsList.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="profile" class="profileActionBean">
+			<result name="success">/profile.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createProfile" class="profileActionBean" method="create">
+			<result name="input">/createProfile.jsp</result>
+			<result name="success">/createProfileResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="editProfile" class="profileActionBean" method="edit">
+			<result name="input">/editProfile.jsp</result>
+			<result name="success">/editProfileResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="searchProfile" class="profileActionBean" method="search">
+			<result name="input">/searchProfile.jsp</result>
+			<result name="success">/searchProfileResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allProfile" class="profileActionBean" method="profileList">
+			<result name="list">/allProfile.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="advert" class="advertActionBean">
+			<result name="success">/advert.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createAdvert" class="advertActionBean" method="create">
+			<result name="input">/createAdvert.jsp</result>
+			<result name="success">/createAdvertResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="editAdvert" class="advertActionBean" method="edit">
+			<result name="input">/editAdvert.jsp</result>
+			<result name="success">/editAdvertResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="searchAdvert" class="advertActionBean" method="search">
+			<result name="input">/searchAdvert.jsp</result>
+			<result name="success">/searchAdvertResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allAdvert" class="advertActionBean" method="advertList">
+			<result name="list">/allAdvert.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="liveadvert" class="advertActionBean" method="liveadvert">
+			<result name="success">/liveadverts.jsp</result>		
+		</action>
+
+		<action name="quest" class="questActionBean">
+			<result name="success">/quest.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createQuest" class="questActionBean" method="create">
+			<result name="input">/createQuest.jsp</result>
+			<result name="success">/createQuestResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="editQuest" class="questActionBean" method="edit">
+			<result name="input">/editQuest.jsp</result>
+			<result name="success">/editQuestResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="searchQuest" class="questActionBean" method="search">
+			<result name="input">/searchQuest.jsp</result>
+			<result name="success">/searchQuestResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allQuest" class="questActionBean" method="questList">
+			<result name="list">/allQuest.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="job" class="jobActionBean">
+			<result name="success">/job.jsp</result>
+			<result name="jsuccess">/jjob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createJob" class="jobActionBean" method="create">
+			<result name="input">/createJob.jsp</result>
+			<result name="success">/createJobResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="editJob" class="jobActionBean" method="edit">
+			<result name="input">/editJob.jsp</result>
+			<result name="success">/editJobResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+			<action name="editJobAdmin" class="jobActionBean" method="edit">
+			<result name="input">/editJobAdmin.jsp</result>
+			<result name="success">/editAdminJobResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		 
+
+		<action name="searchJob" class="jobActionBean" method="search">
+			<result name="input">/searchJob.jsp</result>
+			<result name="jinput">/jsearchJob.jsp</result>
+			<result name="ainput">/asearchJob.jsp</result>
+			<result name="alist">/asearchJobResult.jsp</result>
+			<result name="success">/searchJobResult.jsp</result>
+			<result name="jlist">/jSearchallJob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		
+
+		<action name="allJob" class="jobActionBean" method="jobList">
+			<result name="list">/allJob.jsp</result>
+			<result name="jlist">/jallJob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		
+		<action name="vacancy" class="jobActionBean" method="getAlljobList">
+			<result name="list">/adminJobList.jsp</result>
+			<result name="jlist">/adminJobList.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="preferedJob" class="jobActionBean" method="preferedJob">
+			<result name="jlist">/jallJob.jsp</result>
+		</action>
+		
+		<action name="viewDetailedJob" class="jobActionBean" method="viewDetailedJob">
+			<result name="details">/jJobDetail.jsp</result>
+		</action>
+		
+		
+		<action name="viewApplicants" class="jobActionBean" method="viewApplicants">
+			<result name="list">/jobApplicants.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+
+		<action name="exam" class="examActionBean">
+			<result name="success">/exam.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createExam" class="examActionBean" method="create">
+			<result name="input">/createExam.jsp</result>
+			<result name="success">/createExamResult.jsp</result>
+			<result name="payment">/PaymentGateway1.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="editExam" class="examActionBean" method="edit">
+			<result name="input">/editExam.jsp</result>
+			<result name="inputp">/editPExam.jsp</result>
+			<result name="success">/editExamResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="searchExam" class="examActionBean" method="search">
+			<result name="input">/searchExam.jsp</result>
+			<result name="success">/searchExamResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allExam" class="examActionBean" method="examList">
+			<result name="list">/allExam.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allPExam" class="examActionBean" method="pexamList">
+			<result name="list">/allPExam.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="clearedUser" class="jobActionBean" method="clearedUser">
+			<result name="list">/clearedExam.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="examQAdd" class="midoDAOBean">
+			<result type="redirectAction">
+				<param name="actionName">examQAdds</param>
+			</result>
+		</action>
+
+		<action name="examQAdds" class="examQusActionBean" method="qustAdd">
+			<result name="fill">/editExamQList.jsp</result>
+			<result name="added">/editExamQList.jsp</result>
+			<result name="show">/allPExamQus.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="jsprofile" class="profileActionBean" method="jsexecute">
+			<result name="success">/jsprofile.jsp</result>
+			<result name="input">/esprofile.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		
+
+		<action name="jsviewProfile" class="profileActionBean" method="jsViewProfile">
+			<result name="success">/jsViewProfile.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="jseditProfile" class="profileActionBean" method="jseditProfile">
+			<result name="input">/editjsProfile.jsp</result>
+			<result name="success">/editjsProfileResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="resume" class="resumeActionBean">
+			<result name="success">/resume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="createResume" class="resumeActionBean" method="create">
+			<result name="input">/createResume.jsp</result>
+			<result name="success">/createResumeResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="editResume" class="resumeActionBean" method="edit">
+			<result name="input">/editResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="editSaveResume" class="resumeActionBean" method="save">
+			<result name="input">/editResume.jsp</result>
+			<result name="success">/editResumeResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="downloadResume" class="resumeActionBean" method="preview">
+			<result name="test-stream" type="stream">
+				<param name="inputName">fileStream</param>
+				<param name="contentType">application/pdf</param>
+				<param name="contentDisposition">filename="resume.pdf"</param>
+			</result>
+		</action>
+		<action name="applyJob" class="jobActionBean" method="apply">
+			<result name="success">/jallJob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="viewSavedJob" class="jobActionBean" method="viewSavedJob">
+			<result name="list">/jallJob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="viewAppliedJob" class="jobActionBean" method="viewAppliedJob">
+			<result name="list">/jallJob.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="eresume" class="resumeActionBean" method="eexecute">
+			<result name="success">/empResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="searchEResume" class="resumeActionBean" method="searchEResume">
+			<result name="input">/searchResume.jsp</result>
+			<result name="success">/allSResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="allEResume" class="resumeActionBean" method="allEResume">
+			<result name="list">/allResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="saveResume" class="resumeActionBean" method="saveR">
+			<result name="list">/allResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="purchaseResume" class="resumeActionBean" method="purchaseR">
+			<result name="pay">/PaymentGateway2.jsp</result>
+			<result name="list">/allPurResume.jsp</result>			
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="viewSavedEResume" class="resumeActionBean" method="viewSavedR">
+			<result name="list">/allSavResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="viewPurchasedEResume" class="resumeActionBean" method="viewPurchaseR">
+			<result name="list">/allPurResume.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="examJS" class="examActionBean" method="executejs">
+			<result name="success">/examjs.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="searchExamJS" class="examActionBean" method="search">
+			<result name="input">/searchExam.jsp</result>
+			<result name="success">/allExamSjs.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="allExamJS" class="examActionBean" method="allexamList">
+			<result name="list">/allExamjs.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="allExamPJS" class="examActionBean" method="examListCleared">
+			<result name="list">/allExamPjs.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="giveExam" class="examActionBean" method="giveExam">
+			<result name="success">/examjs.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="giveExamReal" class="examActionBean" method="giveExam">
+			<result name="success">/giveExam.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="examResult" class="examActionBean" method="examResult">
+			<result name="success">/examResult.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="jsupload" class="uploadActionBean"> 	
+  			<result name="input">/jsUpload.jsp</result>
+  			<result name="error">/login.jsp</result>           
+        </action>
+        
+        <action name="jsupload1" class="uploadActionBean" method="upload"> 
+          	<result name="input">/jsUpload.jsp</result>	  			
+            <result name="success">/jsprofile.jsp</result>
+            <result name="error">/login.jsp</result>           
+        </action>
+		
+		<action name="download" class="uploadActionBean" method="download">
+			<result name="test-stream" type="stream">
+				<param name="inputName">fileStream</param>
+				<param name="contentType">application/doc</param>
+				<param name="contentDisposition">filename="resume.doc"</param>
+			</result>
+			<result name="fail">/jsprofile.jsp</result>
+			 <result name="error">/login.jsp</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="pojo.Resume_Experience" table="Resume_Experience">
+        <id column="resume_exp_no" name="resume_exp_no">
+            <generator class="increment"/>
+        </id>
+
+        <many-to-one
+			name="resume"
+			column="resume_no"
+			class="pojo.Resume"
+			not-null="true"
+			cascade="all"
+            />
+
+        <property column="job_title" length="200" name="job_title" type="string"/>
+        <property column="job_profile" length="200" name="job_profile" type="string"/>
+        <property column="company" name="company" type="string"/>
+        <property column="location" name="location" type="string"/>
+        <property column="job_responsibility" name="job_responsibility" type="string"/>
+        <property column="from_date" name="from_date" type="string"/>
+        <property column="to_date" name="to_date" type="string"/>
+    </class>
+
+</hibernate-mapping>

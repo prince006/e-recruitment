@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pojo.Exam" table="Exam_info">
+        <id column="exam_no" name="exam_no">
+            <generator class="increment"/>
+        </id>
+        <property column="no_of_qus" name="no_of_qus" type="integer"/>
+        <property column="min_pass" name="min_pass" type="integer"/>
+        <property column="exam_time" name="exam_time" type="integer"/>
+        <property column="is_active" length="1" name="is_active" type="string"/>
+        <property column="created_by" length="20" name="created_by" type="string"/>
+        <property column="created_on" name="created_on" type="java.sql.Timestamp"/>
+        <set
+			name="questions"
+			table="exam_qus_info"
+			cascade="all">
+            <key column="exam_no"/>
+            <many-to-many column="qus_no" class="pojo.Question"/>
+        </set>
+        <set
+			name="takers"
+			table="exam_takers_info"
+			cascade="all">
+            <key column="exam_no"/>
+            <many-to-many column="USER_ID" class="pojo.UserPojo"/>
+        </set>        
+    </class>
+</hibernate-mapping>
